@@ -20,3 +20,6 @@ Database is MongoDb Atlas, For API development ExpressJS is used.
 - **config:** <br/>
   It lets you define a set of default parameters, and extend them for different deployment environments (development, qa, staging, production, etc.).
   Basically, we use this package for setting our configurations for development and productions enviornment.
+
+- **mongoose** <br/>
+  Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
