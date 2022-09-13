@@ -19,7 +19,4 @@ Database is MongoDb Atlas, For API development ExpressJS is used.
 
 - **config:** <br/>
   It lets you define a set of default parameters, and extend them for different deployment environments (development, qa, staging, production, etc.).
-
-Configurations are stored in configuration files within your application, and can be overridden and extended by environment variables, command line parameters, or external sources.
-
-This gives your application a consistent configuration interface shared among a growing list of npm modules also using node-config.
+  Basically, we use this package for setting our configurations for development and productions enviornment.
