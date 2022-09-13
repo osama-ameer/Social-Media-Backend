@@ -4,6 +4,8 @@
 
 ![backend rourtes](./routes.PNG)
 
+Database is MongoDb Atlas, For API development ExpressJS is used.
+
 ### Npm Packages:
 
 - **nodemon:** <br/>
@@ -11,3 +13,13 @@
 
 - **express:**<br/>
   Express js is a framework of NodeJS used to build APIs.
+
+- **express-validator:** <br/>
+  Validate the data which client sends to the server for any request. for example: email, password etc.
+
+- **config:** <br/>
+  It lets you define a set of default parameters, and extend them for different deployment environments (development, qa, staging, production, etc.).
+
+Configurations are stored in configuration files within your application, and can be overridden and extended by environment variables, command line parameters, or external sources.
+
+This gives your application a consistent configuration interface shared among a growing list of npm modules also using node-config.
