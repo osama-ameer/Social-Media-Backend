@@ -29,3 +29,7 @@ Database is MongoDb Atlas, For API development ExpressJS is used.
 
 - **bcrypt** <br/>
   To hash/decrypt the password
+
+## Auth Middlewere
+
+In auth middlewere we are getting the user id from the jwt token from the req.header.

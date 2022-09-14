@@ -7,15 +7,17 @@ const config = require("config");
 const bcrypt = require("bcrypt");
 
 // @route POST /api/users
-// @desc Add new User
+// @desc Add new User / Signup
 // @acces Public
+
 router.post(
   "/",
+  // Middleware for validating the req data coming from the client side
   [
     check("name", "Please enter a name of almost 3 characters").isLength({ min: 3 }),
     check("email", "Enter a valid email").isEmail(),
-    check("password", "Enter password between 5 - 20 characters").isLength({
-      min: 5,
+    check("password", "Enter password of atleast 6 characters").isLength({
+      min: 6,
       max: 20,
     }),
   ],
