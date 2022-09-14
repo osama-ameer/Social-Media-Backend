@@ -23,3 +23,9 @@ Database is MongoDb Atlas, For API development ExpressJS is used.
 
 - **mongoose** <br/>
   Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+
+- **jsonwebtoken** <br/>
+  To create a specific token for a user
+
+- **bcrypt** <br/>
+  To hash/decrypt the password
