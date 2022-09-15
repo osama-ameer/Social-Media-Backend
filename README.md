@@ -3,7 +3,6 @@
 ### Links:
 
 - Heroku Deployment: https://backend-social-application.herokuapp.com/
-- Postman Collection: https://www.getpostman.com/collections/138e27a915f0b3e3fdfa
 
 ### Backend Routes
 
@@ -49,7 +48,7 @@ In auth middlewere we are getting the user id from the jwt token from the req.he
 - **.findByIdAndUpdate( req.params.id,{ $set: changes },{ new: true }):** First Parameter
   id by which it finds the object, $set sets the variable in which all changes are present
   and new returns the updated result.
-- **.findByIdAndRemove(req.params.id):** Removes the spacific object from DB with the given id.
+- **.findByIdAndRemove(req.params.id):** Removes the specific object from DB with the given id.
 
 ### Herouku Deployment:
 
