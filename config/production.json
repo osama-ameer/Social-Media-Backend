@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://osama:osama@cluster0.nz4bagk.mongodb.net/?retryWrites=true&w=majority",
+    "jwtSecret": "JWTSECRET"
+}
