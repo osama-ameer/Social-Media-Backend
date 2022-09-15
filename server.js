@@ -1,10 +1,8 @@
 const express = require("express");
 const app = express();
 const connectDB = require("./config/db");
-// const cors = require("cors");
 
-// app.use(cors());
-app.use(express.json({ extended: false }));
+app.use(express.json({ extended: false })); // For JSON data in server side
 
 connectDB();
 
@@ -19,5 +17,5 @@ app.use("/api/users", require("./rotues/users"));
 app.use("/api/posts", require("./rotues/posts"));
 
 app.listen(PORT, () => {
-  console.log(`Server has been started\nhttp://localhost:${PORT}`);
+  console.log(`Server is running on port: ${PORT}`);
 });
