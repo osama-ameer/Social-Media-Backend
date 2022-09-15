@@ -4,7 +4,7 @@ const config = require('config')
 const auth = (req,res,next) => {
     
     // Get the token from the header
-    const token = req.header("auth-token")
+    const token = req.header("Authorization")
 
     // Check if token is present or not 
     if(!token) return res.status(401).json({ msg: "Token is missing"})

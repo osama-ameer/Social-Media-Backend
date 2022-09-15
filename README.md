@@ -30,6 +30,18 @@ Database is MongoDb Atlas, For API development ExpressJS is used.
 - **bcrypt** <br/>
   To hash/decrypt the password
 
-## Auth Middlewere
+### Auth Middlewere
 
 In auth middlewere we are getting the user id from the jwt token from the req.header.
+
+### MongoDB
+
+- **.save():** Save data to collection
+- **.findOne({email}):** get the data from DB from one field
+- **.findById(1).select({ password: 0}):** get the data by specific id and does not return
+  returns the password by giving writing .select().
+- **.find():** Get all the documents from collection.
+- **.findByIdAndUpdate( req.params.id,{ $set: changes },{ new: true }):** First Parameter
+  id by which it finds the object, $set sets the variable in which all changes are present
+  and new returns the updated result.
+- **..findByIdAndRemove(req.params.id):** Removes the spacific object from DB with the given id.

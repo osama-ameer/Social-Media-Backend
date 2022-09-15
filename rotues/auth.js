@@ -30,7 +30,7 @@ router.post('/',
 
     // Check user exists
     const user = await User.findOne({email})
-    console.log(user);
+    // console.log(user);
     if(!user) return res.status(400).json({ msg: "User does not exists with this email."})
 
     // Check password matched or not

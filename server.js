@@ -10,7 +10,7 @@ const PORT = 5000
 // APIs
 app.use("/api/auth", require('./rotues/auth'))
 app.use('/api/users', require('./rotues/users'))
-// app.use('/api/posts', require('./rotues/posts'))
+app.use('/api/posts', require('./rotues/posts'))
 
 
 app.listen(PORT, () => {
