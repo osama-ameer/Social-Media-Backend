@@ -5,7 +5,7 @@ const connectDB = require('./config/db')
 app.use(express.json({ extended: false })) // To use JSON on server
 
 connectDB();
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 app.get("/" , (req,res) => {
     res.json({
