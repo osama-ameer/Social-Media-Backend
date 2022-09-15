@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ msg: "This is social app" });
 });
 
-app.use("/api/auth", require("./routes/auth"));
+app.use("/api/auth", require("./rotues/auth"));
 app.use("/api/users", require("./routes/users"));
 app.use("/api/posts", require("./routes/posts"));
 
