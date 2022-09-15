@@ -1,24 +1,23 @@
-const express = require('express')
-const app = express()
-const connectDB = require('./config/db')
+const express = require("express");
+const app = express();
+const connectDB = require("./config/db");
+// const cors = require("cors");
 
-app.use(express.json({ extended: false })) // To use JSON on server
+// app.use(cors());
+app.use(express.json({ extended: false }));
 
 connectDB();
-const PORT = process.env.PORT || 5000
 
-app.get("/" , (req,res) => {
-    res.json({
-        msg: "This is social App"
-    })
-})
+const PORT = process.env.PORT || 5000;
 
-// APIs
-app.use("/api/auth", require('./rotues/auth'))
-app.use('/api/users', require('./rotues/users'))
-app.use('/api/posts', require('./rotues/posts'))
+app.get("/", (req, res) => {
+  res.status(200).json({ msg: "This is social app" });
+});
 
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/posts", require("./routes/posts"));
 
 app.listen(PORT, () => {
-    console.log(`Server is listening on port: ${PORT}`);
-})
+  console.log(`Server has been started\nhttp://localhost:${PORT}`);
+});
