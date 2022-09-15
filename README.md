@@ -1,5 +1,10 @@
 ## Social Media App Backend NodeJs/Express/MongoDB
 
+### Links:
+
+- Heroku Deployment: https://backend-social-application.herokuapp.com/
+- Postman Collection: https://www.getpostman.com/collections/138e27a915f0b3e3fdfa
+
 ### Backend Routes
 
 ![backend rourtes](./routes.PNG)
@@ -39,9 +44,15 @@ In auth middlewere we are getting the user id from the jwt token from the req.he
 - **.save():** Save data to collection
 - **.findOne({email}):** get the data from DB from one field
 - **.findById(1).select({ password: 0}):** get the data by specific id and does not return
-  returns the password by giving writing .select().
+  the password by writing .select().
 - **.find():** Get all the documents from collection.
 - **.findByIdAndUpdate( req.params.id,{ $set: changes },{ new: true }):** First Parameter
   id by which it finds the object, $set sets the variable in which all changes are present
   and new returns the updated result.
-- **..findByIdAndRemove(req.params.id):** Removes the spacific object from DB with the given id.
+- **.findByIdAndRemove(req.params.id):** Removes the spacific object from DB with the given id.
+
+### Herouku Deployment:
+
+- Create App
+- Settings -> Add Buildpack -> NodeJS
+- Deploy -> Connect to GitHub Repo -> Enable Auto Deploy
