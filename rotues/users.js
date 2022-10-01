@@ -5,9 +5,13 @@ const { check, validationResult } = require("express-validator");
 const User = require("../models/user");
 const config = require("config");
 const bcrypt = require("bcrypt");
+const auth = require("../middlewere/auth");
+const checkRole = require("../middlewere/validateRole");
+
+
 
 // @route POST /api/users
-// @desc Add new User / Signup
+// @desc Add new User / Register a new user
 // @acces Public
 
 router.post(
@@ -29,13 +33,14 @@ router.post(
       return res.status(400).json({ errors: error.array() });
 
     // Get Data
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     // Create User
     const user = new User({
       name,
       email,
       password,
+      role
     });
 
     // Hash Password
@@ -54,6 +59,7 @@ router.post(
       const payload = {
         user: {
           id: user.id,
+          role: user.role
         },
       };
 
@@ -75,5 +81,29 @@ router.post(
     }
   }
 );
+
+
+// @route GET /api/users
+// @desc Get all users
+// @acces Private - Admin
+
+router.get('/', 
+auth,
+checkRole("admin"),
+async(req,res) => {
+
+  try {
+    const users = await User.find().select({
+      password: 0,
+      __v: 0
+    })
+
+    res.status(200).json({ users })
+  } catch (error) {
+    console.log("Error ", error.message);
+      res.status(500).json({ msg: "Server Error" });
+  }
+})
+
 
 module.exports = router

@@ -9,7 +9,7 @@ const auth = require("../middlewere/auth");
 
 
 // @route POST /api/auth
-// @desc Authorize User
+// @desc Authorize User / Login 
 // @acces Public
 
 router.post('/',
@@ -42,6 +42,7 @@ router.post('/',
      const payload = {
         user: {
           id: user.id,
+          role: user.role
         },
       };
 
@@ -54,7 +55,10 @@ router.post('/',
         },
         (err, token) => {
           if (err) throw err;
-          res.status(200).json({ token });
+          res.status(200).json({ 
+            token,
+            role: user.role,
+          });
         }
       );
 
